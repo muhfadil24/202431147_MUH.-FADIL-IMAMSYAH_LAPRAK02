@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LAPORAN PRAKTIKUM</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>LAPORAN PRAKTIKUM</h1>
+    <h2>MUH. FADIL IMAMSYAH| 202431147</h2>
+  </header>
+
+  <button class="mode-btn" id="toggleMode">Mode Berantakan</button>
+
+  <div class="container">
+    <div class="section">
+      <h3>a. Mengapa menggunakan CSS dan JavaScript?</h3>
+      <p>CSS digunakan untuk mengatur tampilan agar konsisten dan menarik. JavaScript menambah interaktivitas dan logika dinamis pada halaman web.</p>
+    </div>
+    <div class="section">
+      <h3>b. Konsep dan tujuan Responsive Web Design (RWD)</h3>
+      <p>RWD membuat tampilan web menyesuaikan ukuran layar, sehingga nyaman diakses dari desktop, tablet, maupun smartphone.</p>
+    </div>
+    <div class="section">
+      <h3>c. Kombinasi CSS, JavaScript, dan RWD</h3>
+      <p>CSS mengatur gaya, RWD memastikan adaptasi di berbagai perangkat, dan JavaScript menambahkan interaktivitas. Ketiganya saling melengkapi untuk pengalaman pengguna yang optimal.</p>
+    </div>
+  </div>
+
+  <script>
+    // Toggle Mode Rapi / Berantakan
+    const btn = document.getElementById('toggleMode');
+    btn.addEventListener('click', () => {
+      document.body.classList.toggle('berantakan');
+      btn.textContent = document.body.classList.contains('berantakan')
+        ? ' Mode Rapi'
+        : ' Mode Berantakan';
+    });
+
+    // Interaktivitas klik h3
+    document.querySelectorAll('.section h3').forEach(h3 => {
+      h3.addEventListener('click', () => {
+        const content = h3.nextElementSibling;
+        const confirmHide = confirm("Apakah konten ingin disembunyikan?");
+        if (confirmHide) {
+          content.classList.toggle('hidden');
+        }
+      });
+    });
+  </script>
+</body>
+</html>

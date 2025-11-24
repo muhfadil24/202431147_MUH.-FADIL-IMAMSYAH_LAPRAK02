@@ -1,0 +1,81 @@
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f0f0f0;
+      transition: all 0.3s ease;
+    }
+    header {
+      text-align: center;
+      padding: 20px;
+      background: #4a90e2;
+      color: white;
+    }
+    h1 { margin: 0; }
+    h2 { margin: 5px 0 0; font-weight: normal; }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      padding: 20px;
+      gap: 20px;
+    }
+    .section {
+      flex: 1 1 300px;
+      background: white;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
+    }
+    .section h3 {
+      cursor: pointer;
+      margin-top: 0;
+      color: #333;
+    }
+    .hidden { display: none; }
+
+    /* Tombol mode */
+    .mode-btn {
+      display: block;
+      margin: 20px auto;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      background: #4a90e2;
+      color: white;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    /* Mode Berantakan */
+    body.berantakan {
+      background: yellow;
+      color: red;
+    }
+    body.berantakan .section {
+      background: lime;
+      transform: rotate(2deg);
+      font-size: 22px;
+      color: blue;
+    }
+    body.berantakan .mode-btn {
+      background: magenta;
+      color: black;
+      font-size: 20px;
+    }
+
+    /* Responsivitas */
+    @media (min-width:1024px) {
+      .container { flex-direction: row; }
+    }
+    @media (min-width:600px) and (max-width:1023px) {
+      .container { flex-direction: column; }
+      body { font-size: 16px; }
+    }
+    @media (max-width:599px) {
+      .container { flex-direction: column; }
+      body { font-size: 18px; }
+      .mode-btn { font-size: 18px; padding: 15px 25px; }
+    }
